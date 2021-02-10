@@ -34,6 +34,11 @@ async def on_message(msg):
     if msg.author == client.user:
         return
 
+    # can't have anyone making fun of my bot
+    if ("<@!803177669939167245>" in msg.content and "fuck you" in msg.content):
+        await msg.channel.send(msg.author.mention + " fuck you too")
+
+
     num = random.randint(1,ODD)
     
     exercise = get_exercise()
