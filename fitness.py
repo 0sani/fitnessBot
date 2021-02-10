@@ -3,6 +3,7 @@ from discord.ext import commands
 from datetime import datetime
 import sys
 import random
+import config
 
 client = commands.Bot(command_prefix="!")
 
@@ -35,7 +36,7 @@ async def on_message(msg):
         return
 
     # can't have anyone making fun of my bot
-    if ("<@!803177669939167245>" in msg.content and "fuck you" in msg.content):
+    if (f"<@!{config.bot_id}>" in msg.content and "fuck you" in msg.content):
         await msg.channel.send(msg.author.mention + " fuck you too")
 
 
