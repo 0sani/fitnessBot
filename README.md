@@ -4,7 +4,6 @@
 
 Randomly sends a message telling you to do fitness whenever you send something in discord
 
-<<<<<<< HEAD
 ## Features
 
 ### Set server odds:
@@ -31,11 +30,6 @@ Command: `!exclude_channel <channel>` to remove, `!unexclude_channel <channel>` 
 
 Ex: `!exclude_channel 808606611047710730`
 
-=======
-## Set Up
-
-Create a file called `config.py` and add a variable called `bot_id`. Set this variable equal to the discord user id of the bot account, as an int
->>>>>>> c289a76ab99ca099017e34edd9357cf2b682e62a
 
 ## How to run
 
