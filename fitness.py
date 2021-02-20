@@ -80,6 +80,23 @@ async def on_message(msg):
     
     await client.process_commands(msg)
 
+@client.event
+async def on_guild_join(guild):
+
+    data = get_data()
+
+    defaults = {
+        "odds": 50,
+        "message": ": do",
+        "excludedUsers": [],
+        "excludedChannels": []
+    }
+
+    data["servers"][str(guild.id)] = defaults
+
+    write_data(data)
+
+    print(f"Successfully added {guild.name}")
 
 @client.command(hidden=True)
 async def change_odds(ctx, newOdd):
@@ -111,7 +128,7 @@ async def change_message(ctx, newMsg):
 
     write_data(data)
 
-    await ctx.send(f"Changed message to <mentions user>: {newMsg} <exercise>")
+    await ctx.send(f"Changed message to <mentions user> {newMsg} <exercise>")
 
 @client.command(hidden=True)
 async def exclude_channel(ctx, channel): #takes in channel id
